@@ -1,0 +1,200 @@
+body{
+    margin:0;
+    background-image:url("/images/3.png");
+    background-size:cover;
+}
+#main{
+    margin: auto;
+    width:50%;
+    min-height:60%;
+    background-color: white;
+    box-shadow: 0 0 2px 2px rgb(106, 106, 106);
+}
+#heading{
+    position: relative;
+    font-family:'Times New Roman';
+    text-align: center;
+    font-weight:100;
+    color:grey;
+    top:10px;
+}
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+hr.style-two{
+    border: 0;
+    height: 1px;
+    color:grey;
+}
+label{
+    position: relative;
+    font-family: sans-serif;
+    color:grey;
+    font-size: 13px;
+    font-weight: bold;
+}
+.input{
+    border: none;
+    outline: none;
+   
+}
+#description{
+    position: relative;
+    padding: 10px 0 5px 20px;
+}
+::placeholder{
+    color:rgb(182, 182, 182);
+}
+#des-list{
+    color:rgb(95, 95, 95);
+    margin-left:25px;
+    font-family: sans-serif;
+    display: inline-block;
+    word-wrap:break-word;
+    max-width:43%;
+}
+#category{
+    width:47%;
+    padding: 10px 0 5px 20px;
+    border-right: 1px solid rgb(174, 174, 174);
+}
+select{
+    padding: 5px 0 5px 0px;
+    width:85%;
+    border: none;
+    outline: none;
+}
+#cat-date{
+    width: 100%;
+    border:1px solid rgb(174, 174, 174);
+    border-left:none;
+    margin-top: 10px;
+}
+#due-date{
+    width:100%;
+    border: none;
+    outline: none;
+}
+#date{
+    width:35%;
+    height:43px;
+    padding: 10px 0 5px 10px;
+    margin-left: -4px;
+}
+#add{
+    background-color: rgb(62, 46, 46);
+    color:white;
+    border:none;
+    width:160px;
+    height: 50px;
+    outline: none;
+    padding:18px 20px 20px 20px;
+    font-family:sans-serif;
+    font-weight:lighter;
+    top:28%;
+    right: 51%;
+}
+#del{
+    display: inline-block;
+    position: fixed;
+    background-color:rgb(255, 60, 60);
+    color:white;
+    border:none;
+    outline: none;
+    width:160px;
+    height: 50px;
+    padding:18px 20px 20px 20px;
+    font-family:sans-serif;
+    font-weight:lighter;
+    top:28%;
+    left: 50%;
+}
+form i{
+    margin-right:2px;
+}
+#add i{
+    margin-right:10px;
+}
+#del i{
+    margin-right:10px;
+}
+#add:hover{
+    background-color:black;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+#del:hover{
+    background-color: rgb(240, 0, 0);
+    opacity: 0.9;
+    transition: 0.3s;
+}
+#unordered-list{
+    margin-top:100px;
+}
+#unordered-list ul{
+    list-style:none;
+}
+#elements{
+    border-top:1px solid rgb(174, 174, 174);
+    width:94%;
+}
+#time{
+    position: relative;
+    margin-left: 25px;
+    font-size: 10px;
+    color:grey;
+    top:4px;
+}
+#list-elements{
+    margin-top:10px;
+    padding:0 5px 20px 0;
+}
+#category-box{
+    border-radius: 3px;
+    color:white;
+    width:80px;
+    height:23px;
+    text-align:center;
+    padding-top:13px;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+#check-box{
+    position:absolute;   
+    margin-top: 10px;
+    outline:none;
+}
+#description:hover{
+     background-color:#f2f2f2;
+     transition: 0.3s;
+}
+#description:hover .input{
+    background-color:#f2f2f2;
+    transition: 0.3s;
+}
+#category:hover{
+    background-color:#f2f2f2;
+    transition: 0.3s;
+}
+#category:hover select{
+    background-color:#f2f2f2;
+    transition: 0.3s;
+}
+#date:hover{
+    background-color:#f2f2f2;
+    transition: 0.3s;
+}
+#date:hover input{
+    background-color:#f2f2f2;
+    transition: 0.3s;
+}
+/* Darker background-color on hover */
+ul li:hover {
+    background: #f2f2f2;
+    transition: 0.3s;
+}
+#list-elements input:checked{
+   background-color: green;
+}

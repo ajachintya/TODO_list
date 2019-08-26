@@ -1,8 +1,75 @@
 <html>
     <head>
-       <title><%= title %></title>
+       <title>TODO List</title>
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+       <link rel="stylesheet" type="text/css" href="/css/home.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
-        
+        <div id="main">
+            <h1 id="heading">TODO App</h1>
+            <hr class="style-one">
+            <form action="/create-list" method="POST">
+           <div id="des" style="height: auto;">
+            <div id="description">
+            <label>DESCRIPTION</label><br>
+            <input class="input" type="text" name="description" placeholder="What do you need to do?" required>
+            </div>
+           </div>
+            <div id="cat-date">
+               <div style="display:inline-block;"id="category">
+                    <label>CATEGORY</label><br>
+                    <select name="category" id="sel" required>
+                        <option disabled selected>Choose a category</option>
+                        <option value="PERSONAL">PERSONAL</option>
+                        <option value="WORK">WORK</option>
+                        <option value="SCHOOL">SCHOOL</option>
+                        <option value="CLEANING">CLEANING</option>
+                        <option value="OTHER">OTHER</option>
+                    </select>
+                </div>
+               <div style="display:inline-block; vertical-align: top;" id="date">
+                    <label id="d-date">DUE DATE</label><br>
+                    <input id="due-date" name="date" type="date" required>
+               </div>
+            </div>
+               <button style="position: fixed;" id="add" type="submit"><i class="fas fa-plus"></i>ADD</button>
+           </form>
+               <form action="/delete-list" method="POST" >
+            <button id="del" type="submit" style="margin-right:10%;"><i class="fas fa-trash-alt"></i>DELETE TASK</button>
+            <div id="unordered-list">
+               <ul>
+                 <% for(let i of todo_data) {%>
+                    <li id="elements">
+                        <div id="list-elements">
+                        <input id="check-box" class="check-box" type="checkbox" name="_id" value="<%= i._id %>" onclick="myFun()">
+                        <span id="des-list" class="des-list"><%= i.description %></span>
+                            <% if(i.category=="WORK"){ %>
+                                <span id="category-box" style="float: right;background-color: purple;"><%= i.category %></span>
+                                <%}%>
+                            <% if(i.category=="PERSONAL"){ %>
+                                <span id="category-box" style="float: right;background-color: red;"><%= i.category %></span>
+                            <%}%>
+                            <% if(i.category=="OTHER"){ %>
+                                <span id="category-box" style="float: right;background-color: rgb(216, 216, 18);"><%= i.category %></span>
+                            <%}%>    
+                            <% if(i.category=="CLEANING"){ %>
+                                <span id="category-box" style="float: right;background-color: green;"><%= i.category %></span>
+                            <%}%>
+                            <% if(i.category=="SCHOOL"){ %>
+                                <span id="category-box" style="float: right;background-color:royalblue;"><%= i.category %></span>
+                            <%}%>            
+                        <br>
+                        <span id="time" class="time"><i class="far fa-calendar-alt"></i>
+                            <%= i.date %></span> 
+                        </div>
+                    </li>
+                <% } %>
+               </ul>
+           </div>
+
+</form>       
+ </div>
+        <script src="/js/home.js"></script>
     </body>
 </html>
