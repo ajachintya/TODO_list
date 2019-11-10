@@ -4,6 +4,7 @@ const express = require('express');
 
 //requiring databse from config folder
 const db=require('./config/mongoose');
+
 //require schema
 const Todo=require('./models/todo');
 
@@ -22,8 +23,6 @@ app.use(express.urlencoded());
 app.use('/',require('./router/index'));
 
 //middleware to use static files like .css
-
-
 app.use(express.static('assets'));
 
 //creating a listen on specified port or path
